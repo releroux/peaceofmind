@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const whatsappButton = document.querySelector('.whatsapp-button');
 
     // Store the base WhatsApp number
-    const whatsappNumber = process.env.WHATSAPP_NUMBER;
+    // This will be replaced during build by GitHub Actions
+    const whatsappNumber = 'WHATSAPP_NUMBER_PLACEHOLDER';
 
     // Calculate dates
     const today = new Date();
