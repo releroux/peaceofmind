@@ -5,6 +5,9 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -15,12 +18,13 @@ jobs:
 
       - name: Replace Environment Variables 🔄
         run: |
-          # Replace the WhatsApp number placeholder with the actual secret
+          # Replace the WhatsApp number placeholder in both files
           sed -i "s/WHATSAPP_NUMBER_PLACEHOLDER/${{ secrets.WHATSAPP_NUMBER }}/g" scripts.js
+          sed -i "s/WHATSAPP_NUMBER_PLACEHOLDER/${{ secrets.WHATSAPP_NUMBER }}/g" index.html
         
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: .  # The folder the action should deploy
-          branch: gh-pages  # The branch the action should deploy to
-          clean: true  # Automatically remove deleted files from the deploy branch
+          folder: .
+          branch: gh-pages
+          clean: true
