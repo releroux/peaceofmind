@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const whatsappButton = document.querySelector('.whatsapp-button');
 
     // Store the base WhatsApp number
-    const whatsappNumber = '718772881';
+    const whatsappNumber = process.env.WHATSAPP_NUMBER;
 
     // Calculate dates
     const today = new Date();
