@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Store the base WhatsApp number
     // This will be replaced during build by GitHub Actions
-    const whatsappNumber = '';
+    const whatsappNumber = '718772881';
 
     // Calculate dates
     const today = new Date();
